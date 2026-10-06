@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Comentario negativo">
+  <circle cx="24" cy="24" r="23" fill="#f8e9e9" stroke="#b04545" stroke-width="2"/>
+  <path d="M17 13c-4 0-6 3-6 7 0 4 2 6.5 2.8 10.5.8 4 2 7.5 4.2 7.5 2.4 0 2.7-4.8 3.6-7.5.5-1.6 1.2-2.2 2.4-2.2s1.9.6 2.4 2.2c.9 2.7 1.2 7.5 3.6 7.5 2.2 0 3.4-3.5 4.2-7.5.8-4 2.8-6.5 2.8-10.5 0-4-2-7-6-7-3 0-4.5 1.5-7 1.5S20 13 17 13z" fill="#fff" stroke="#b04545" stroke-width="1.8" stroke-linejoin="round"/>
+  <circle cx="20.5" cy="20.5" r="1.4" fill="#b04545"/>
+  <circle cx="27.5" cy="20.5" r="1.4" fill="#b04545"/>
+  <path d="M20.5 26c1.8-2 5.2-2 7 0" fill="none" stroke="#b04545" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

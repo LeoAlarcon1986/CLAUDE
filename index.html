@@ -282,6 +282,193 @@
       gap: 8px 28px;
     }
 
+    /* Imagen */
+    .hero-figure {
+      margin-top: 40px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .hero-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Opiniones */
+    .feedback {
+      border-top: 1px solid var(--line);
+      padding-top: 88px;
+      padding-bottom: 96px;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    h2.section-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .section-head p { color: var(--ink-soft); }
+
+    .feedback-card {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .rating {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      border: none;
+      margin-bottom: 18px;
+    }
+
+    .rating legend {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+
+    .rating { position: relative; }
+
+    .rating input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .rating label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--bg);
+      font-size: 0.95rem;
+      color: var(--ink);
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .rating label img { width: 28px; height: 28px; }
+
+    .rating input:checked + label {
+      border-color: var(--gold);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.15);
+    }
+
+    .rating input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    textarea {
+      width: 100%;
+      font: inherit;
+      font-size: 0.97rem;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      resize: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.15);
+      background: #fff;
+    }
+
+    .counter {
+      text-align: right;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .form-msg {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.93rem;
+    }
+
+    .form-msg.show { display: flex; }
+    .form-msg.ok { background: rgba(176, 141, 87, 0.12); color: var(--gold-dark); }
+    .form-msg.error { background: rgba(180, 60, 60, 0.08); color: #9b3535; }
+
+    .comments {
+      max-width: 960px;
+      margin: 64px auto 0;
+    }
+
+    .comments h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .comment-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .comment {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .comment img { width: 36px; height: 36px; flex-shrink: 0; }
+
+    .comment p {
+      color: var(--ink);
+      font-size: 0.95rem;
+      overflow-wrap: anywhere;
+    }
+
+    .comment time {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .comments-empty {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .hero {
@@ -291,6 +478,7 @@
         padding-bottom: 72px;
       }
       .lead { max-width: none; }
+      .feedback { padding-top: 64px; padding-bottom: 72px; }
     }
 
     @media (max-width: 520px) {
@@ -319,7 +507,8 @@
     </div>
   </header>
 
-  <main class="container hero">
+  <main>
+  <div class="container hero">
     <section>
       <span class="eyebrow">Clínica dental</span>
       <h1>Una sonrisa que merece <em>atención de primera</em>.</h1>
@@ -341,6 +530,9 @@
           Confirmación en menos de 24 horas
         </li>
       </ul>
+      <figure class="hero-figure">
+        <img src="img/ilustracion-dental.svg" width="640" height="300" alt="Ilustración de un diente sano y brillante junto a un cepillo dental">
+      </figure>
     </section>
 
     <section class="card" id="agendar" aria-labelledby="form-title">
@@ -399,6 +591,40 @@
         <button type="button" class="btn btn-outline" id="reset">Agendar otra cita</button>
       </div>
     </section>
+  </div>
+
+  <section class="container feedback" id="opiniones" aria-labelledby="feedback-title">
+    <div class="section-head">
+      <span class="eyebrow">Tu opinión</span>
+      <h2 class="section-title" id="feedback-title">¿Cómo te ha parecido nuestro servicio?</h2>
+      <p>Cuéntanos tu experiencia en pocas palabras. Tu comentario nos ayuda a mejorar.</p>
+    </div>
+
+    <form class="card feedback-card" id="feedback-form" novalidate>
+      <fieldset class="rating">
+        <legend>Tu experiencia fue…</legend>
+        <input type="radio" name="tipo" id="tipo-bueno" value="bueno" required>
+        <label for="tipo-bueno"><img src="img/bueno.svg" alt="">Buena</label>
+        <input type="radio" name="tipo" id="tipo-malo" value="malo">
+        <label for="tipo-malo"><img src="img/malo.svg" alt="">Mala</label>
+      </fieldset>
+
+      <div class="field">
+        <label for="comentario">Tu comentario</label>
+        <textarea id="comentario" name="texto" rows="3" maxlength="100" required placeholder="Escribe tu comentario (máximo 100 caracteres)"></textarea>
+        <p class="counter"><span id="contador">0</span>/100</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="feedback-submit">Enviar comentario</button>
+      <div class="form-msg" id="feedback-msg" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="comments" aria-labelledby="comments-title">
+      <h3 id="comments-title">Lo que dicen nuestros pacientes</h3>
+      <ul class="comment-list" id="comment-list"></ul>
+      <p class="comments-empty" id="comments-empty">Cargando comentarios…</p>
+    </div>
+  </section>
   </main>
 
   <footer>
@@ -406,7 +632,7 @@
       <div class="footer-info">
         <span>Calle 123 # 32-4</span>
         <span>Lun – Sáb · 9:00 – 13:00 y 14:00 – 19:00</span>
-        <a href="https://wa.me/573202375722" target="_blank" rel="noopener">WhatsApp: 320 237 5722</a>
+        <a href="https://wa.me/573202375723" target="_blank" rel="noopener">WhatsApp: 320 237 5723</a>
       </div>
       <span>© <span id="year"></span> Sonrisa Imperial</span>
     </div>
@@ -414,7 +640,7 @@
 
   <script>
     // Número de WhatsApp de la clínica (código de país + número, sin espacios ni "+").
-    const WHATSAPP_NUMBER = "573202375722";
+    const WHATSAPP_NUMBER = "573202375723";
 
     const form = document.getElementById("booking-form");
     const success = document.getElementById("success");
@@ -460,6 +686,102 @@
       form.hidden = false;
       success.classList.remove("show");
     });
+
+    // Opiniones
+    const feedbackForm = document.getElementById("feedback-form");
+    const comentario = document.getElementById("comentario");
+    const contador = document.getElementById("contador");
+    const feedbackMsg = document.getElementById("feedback-msg");
+    const feedbackSubmit = document.getElementById("feedback-submit");
+    const commentList = document.getElementById("comment-list");
+    const commentsEmpty = document.getElementById("comments-empty");
+
+    comentario.addEventListener("input", () => {
+      contador.textContent = comentario.value.length;
+    });
+
+    function mostrarMensaje(texto, tipo) {
+      feedbackMsg.textContent = texto;
+      feedbackMsg.className = `form-msg show ${tipo}`;
+    }
+
+    function renderComentarios(comentarios) {
+      commentList.replaceChildren();
+      commentsEmpty.hidden = comentarios.length > 0;
+      commentsEmpty.textContent = "Aún no hay comentarios. ¡Sé el primero en opinar!";
+
+      for (const c of comentarios) {
+        const li = document.createElement("li");
+        li.className = "comment";
+
+        const icon = document.createElement("img");
+        icon.src = c.tipo === "bueno" ? "img/bueno.svg" : "img/malo.svg";
+        icon.alt = c.tipo === "bueno" ? "Comentario positivo" : "Comentario negativo";
+
+        const body = document.createElement("div");
+        const texto = document.createElement("p");
+        texto.textContent = c.texto;
+        const fechaEl = document.createElement("time");
+        fechaEl.dateTime = c.fecha;
+        fechaEl.textContent = new Date(c.fecha).toLocaleDateString("es-CO", {
+          day: "numeric", month: "long", year: "numeric"
+        });
+
+        body.append(texto, fechaEl);
+        li.append(icon, body);
+        commentList.append(li);
+      }
+    }
+
+    async function cargarComentarios() {
+      try {
+        const res = await fetch("/api/comments");
+        if (!res.ok) throw new Error(res.status);
+        const { comentarios } = await res.json();
+        renderComentarios(comentarios);
+      } catch {
+        commentsEmpty.hidden = false;
+        commentsEmpty.textContent = "No pudimos cargar los comentarios en este momento.";
+      }
+    }
+
+    feedbackForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const tipo = feedbackForm.querySelector('input[name="tipo"]:checked')?.value;
+      const texto = comentario.value.trim();
+
+      if (!tipo) return mostrarMensaje("Indica si tu experiencia fue buena o mala.", "error");
+      if (!texto) return mostrarMensaje("Escribe tu comentario antes de enviarlo.", "error");
+
+      feedbackSubmit.disabled = true;
+      feedbackSubmit.textContent = "Enviando…";
+
+      try {
+        const res = await fetch("/api/comments", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ texto, tipo })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          mostrarMensaje(data.error || "No pudimos enviar tu comentario. Inténtalo de nuevo.", "error");
+          return;
+        }
+
+        feedbackForm.reset();
+        contador.textContent = "0";
+        mostrarMensaje("¡Gracias! Tu comentario fue enviado con éxito.", "ok");
+        await cargarComentarios();
+      } catch {
+        mostrarMensaje("No pudimos enviar tu comentario. Inténtalo de nuevo.", "error");
+      } finally {
+        feedbackSubmit.disabled = false;
+        feedbackSubmit.textContent = "Enviar comentario";
+      }
+    });
+
+    cargarComentarios();
   </script>
 </body>
 </html>
