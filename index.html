@@ -355,7 +355,7 @@
 
         <div class="field">
           <label for="telefono">Teléfono / WhatsApp</label>
-          <input id="telefono" name="telefono" type="tel" autocomplete="tel" required placeholder="Ej. 55 1234 5678">
+          <input id="telefono" name="telefono" type="tel" autocomplete="tel" required placeholder="Ej. 320 123 4567">
         </div>
 
         <div class="field">
@@ -404,9 +404,9 @@
   <footer>
     <div class="container footer-inner">
       <div class="footer-info">
-        <span>Av. Principal 123, Ciudad</span>
+        <span>Calle 123 # 32-4</span>
         <span>Lun – Sáb · 9:00 – 19:00</span>
-        <a href="tel:+520000000000">+52 000 000 0000</a>
+        <a href="https://wa.me/573202375722" target="_blank" rel="noopener">WhatsApp: 320 237 5722</a>
       </div>
       <span>© <span id="year"></span> Sonrisa Imperial</span>
     </div>
@@ -414,7 +414,7 @@
 
   <script>
     // Número de WhatsApp de la clínica (código de país + número, sin espacios ni "+").
-    const WHATSAPP_NUMBER = "520000000000";
+    const WHATSAPP_NUMBER = "573202375722";
 
     const form = document.getElementById("booking-form");
     const success = document.getElementById("success");
@@ -436,7 +436,7 @@
       }
 
       const data = Object.fromEntries(new FormData(form));
-      const fechaTexto = new Date(data.fecha + "T00:00:00").toLocaleDateString("es-MX", {
+      const fechaTexto = new Date(data.fecha + "T00:00:00").toLocaleDateString("es-CO", {
         weekday: "long", day: "numeric", month: "long"
       });
 
